@@ -1,7 +1,7 @@
 from expense import Expense
 from storage import saveData
 from datetime import datetime
-from analytics import totalExpense, highestCategory, highestMonth, avgExp, recentTransactions
+from analytics import totalExpense, highestCategory, highestMonth, avgExp, recentTransactions, spendingSuggestion
 from charts import categoryChart, monthlygraph, piechart
 import tkinter as tk;
 from tkinter import ttk, messagebox;
@@ -109,6 +109,14 @@ def open_dashboard():
         text = f"Average Expense: {avgExp()}",
         font = ("Times New Roman", 12),
         bg ="white",
+    ).pack(pady=6)
+
+    tk.Label(
+        box,
+        text = f"Suggestion: {spendingSuggestion()}",
+        font = ("Times New Roman", 12),
+        bg = "white",
+        wraplength=350
     ).pack(pady=6)
 
     tk.Label(

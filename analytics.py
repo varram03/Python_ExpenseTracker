@@ -50,3 +50,16 @@ def recentTransactions(n):
     if df.empty:
         return df
     return df.tail(n)
+
+def spendingSuggestion():
+    category = highestCategory()
+    if category == "Food":
+        return "Consider reducing dining out"
+    elif category == "Shopping":
+        return "Review non-essential purchases"
+    elif category == "Entertainment":
+        return "Entertainment speeding is high."
+    elif category == "Transport":
+        return "Try optimizing travel expenses"
+    else:
+        return f"Review spending in {category} category"
